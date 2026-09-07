@@ -1,3 +1,27 @@
+# AWS credentials and local AWS CLI configuration
+.aws/
+credentials
+config
+
+# Environment variables and local secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Generated audit output and local evidence
+reports/
+exports/
+evidence/
+logs/
+*.log
+*.zip
+*.tar
+*.tar.gz
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
