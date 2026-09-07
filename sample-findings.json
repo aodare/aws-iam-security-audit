@@ -1,0 +1,46 @@
+{
+  "generated_at_utc": "2026-09-07T14:55:00+00:00",
+  "finding_count": 5,
+  "findings": [
+    {
+      "severity": "HIGH",
+      "check": "Root user MFA",
+      "user_name": "<root_account>",
+      "resource": "AWS account root user",
+      "details": "Root user MFA is not enabled.",
+      "remediation": "Enable MFA for the AWS account root user and protect the root credential."
+    },
+    {
+      "severity": "HIGH",
+      "check": "IAM user MFA",
+      "user_name": "jordan.lee",
+      "resource": "IAM user/jordan.lee",
+      "details": "Console password is enabled but MFA is not active.",
+      "remediation": "Enable MFA or migrate human access to federation with temporary credentials."
+    },
+    {
+      "severity": "MEDIUM",
+      "check": "Active access key age",
+      "user_name": "billing-automation",
+      "resource": "IAM user/billing-automation access key 1",
+      "details": "Active access key is 147 days old; threshold is 90 days.",
+      "remediation": "Rotate or replace the key, or migrate the workload to an IAM role with temporary credentials."
+    },
+    {
+      "severity": "LOW",
+      "check": "Inactive IAM user",
+      "user_name": "former-contractor",
+      "resource": "IAM user/former-contractor",
+      "details": "No recorded console or access-key activity for 214 days; threshold is 90 days.",
+      "remediation": "Confirm the account is still required and remove or disable unused credentials following organizational policy."
+    },
+    {
+      "severity": "LOW",
+      "check": "IAM user without credentials",
+      "user_name": "legacy-service-account",
+      "resource": "IAM user/legacy-service-account",
+      "details": "User has neither a console password nor an active access key.",
+      "remediation": "Confirm the user is still needed; remove unused identities through the approved access-management process."
+    }
+  ]
+}
